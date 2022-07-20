@@ -1,5 +1,6 @@
 import logging
 import os
+import os.path
 import pathlib
 
 from pathlib import Path
@@ -23,15 +24,19 @@ def _get_template(template_file_name):
     template_lookup = TemplateLookup(directories=str(template_directory))
     return Template(filename=str(template_file_path), lookup=template_lookup)
 
+
 def _generate_file(metadata, template_file_name, output_path):
+    _logger.info(f"{os.path.basename(output_path)} <-- {template_file_name}")
     template = _get_template(template_file_name)
     with open(output_path, "w+", newline="") as f:
         f.write(template.render(data=metadata))
 
 
 def generate(args):
-    _logger.debug("lolwut")
+    _logger.info(f"Generating files into {args.dest}")
+
+    os.makedirs(args.dest, exist_ok=True)
 
     metadata = _get_metadata()
-    _generate_file(metadata, "test.mako", args.dest / "test.out")
+    _generate_file(metadata, "constants.mako", args.dest / "constants.py")
     # TODO: f'real
