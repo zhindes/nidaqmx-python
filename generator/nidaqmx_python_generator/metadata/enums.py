@@ -267,6 +267,13 @@ enums = {
                 },
                 'name': 'CHARGE',
                 'value': 16105
+            },
+            {
+                'documentation': {
+                    'description': 'Power source and measurement.'
+                },
+                'name': 'POWER',
+                'value': 16201
             }
         ]
     },
@@ -326,21 +333,21 @@ enums = {
                 'documentation': {
                     'description': 'Voltage output.'
                 },
-                'name': '10322',
+                'name': 'VOLTAGE',
                 'value': 10322
             },
             {
                 'documentation': {
                     'description': 'Current output.'
                 },
-                'name': '10134',
+                'name': 'CURRENT',
                 'value': 10134
             },
             {
                 'documentation': {
                     'description': 'High-impedance state.'
                 },
-                'name': '12527',
+                'name': 'HIGH_IMPEDANCE',
                 'value': 12527
             }
         ]
@@ -463,18 +470,6 @@ enums = {
             }
         ]
     },
-    'AltRef': {
-        'values': [
-            {
-                'name': 'MSL',
-                'value': 16005
-            },
-            {
-                'name': 'HAE',
-                'value': 16006
-            }
-        ]
-    },
     'AngleUnits1': {
         'values': [
             {
@@ -535,10 +530,16 @@ enums = {
     'AngleUnits3': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Degrees.'
+                },
                 'name': 'DEGREES',
                 'value': 10146
             },
             {
+                'documentation': {
+                    'description': 'Units a custom scale specifies. If you select this value, you must specify a custom scale name.'
+                },
                 'name': 'FROM_CUSTOM_SCALE',
                 'value': 10065
             }
@@ -573,26 +574,6 @@ enums = {
                 },
                 'name': 'FROM_CUSTOM_SCALE',
                 'value': 10065
-            }
-        ]
-    },
-    'AntStatus': {
-        'values': [
-            {
-                'name': 'UNKNOWN',
-                'value': 12588
-            },
-            {
-                'name': 'NORMAL',
-                'value': 10459
-            },
-            {
-                'name': 'ABSENT',
-                'value': 15994
-            },
-            {
-                'name': 'OVERCURRENT',
-                'value': 15995
             }
         ]
     },
@@ -808,7 +789,7 @@ enums = {
                 'documentation': {
                     'description': 'PCI Express.'
                 },
-                'name': 'PC_IE',
+                'name': 'PCIE',
                 'value': 13612
             },
             {
@@ -822,7 +803,7 @@ enums = {
                 'documentation': {
                     'description': 'PXI Express.'
                 },
-                'name': 'PX_IE',
+                'name': 'PXIE',
                 'value': 14706
             },
             {
@@ -1277,10 +1258,16 @@ enums = {
                 'value': -1
             },
             {
+                'documentation': {
+                    'description': 'Internal'
+                },
                 'name': 'INTERNAL',
                 'value': 10200
             },
             {
+                'documentation': {
+                    'description': 'External'
+                },
                 'name': 'EXTERNAL',
                 'value': 10167
             }
@@ -1662,10 +1649,16 @@ enums = {
     'EveryNSamplesEventType': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Acquired Into Buffer'
+                },
                 'name': 'ACQUIRED_INTO_BUFFER',
                 'value': 1
             },
             {
+                'documentation': {
+                    'description': 'Transferred From Buffer'
+                },
                 'name': 'TRANSFERRED_FROM_BUFFER',
                 'value': 2
             }
@@ -1887,6 +1880,9 @@ enums = {
     'FilterType1': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Hardware-defined filter.'
+                },
                 'name': 'HARDWARE_DEFINED',
                 'value': 10191
             }
@@ -1952,14 +1948,23 @@ enums = {
     'ForceIEPEUnits': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Newtons'
+                },
                 'name': 'NEWTONS',
                 'value': 15875
             },
             {
+                'documentation': {
+                    'description': 'Pounds'
+                },
                 'name': 'POUNDS',
                 'value': 15876
             },
             {
+                'documentation': {
+                    'description': 'From Custom Scale'
+                },
                 'name': 'FROM_CUSTOM_SCALE',
                 'value': 10065
             }
@@ -2111,11 +2116,17 @@ enums = {
     'GroupBy': {
         'values': [
             {
-                'name': 'GROUP_BY_CHANNEL',
+                'documentation': {
+                    'description': 'Group by Channel'
+                },
+                'name': 'CHANNEL',
                 'value': 0
             },
             {
-                'name': 'GROUP_BY_SCAN_NUMBER',
+                'documentation': {
+                    'description': 'Group by Scan Number'
+                },
+                'name': 'SCAN_NUMBER',
                 'value': 1
             }
         ]
@@ -2234,18 +2245,30 @@ enums = {
                 'value': -1
             },
             {
+                'documentation': {
+                    'description': 'RSE'
+                },
                 'name': 'RSE',
                 'value': 10083
             },
             {
+                'documentation': {
+                    'description': 'NRSE'
+                },
                 'name': 'NRSE',
                 'value': 10078
             },
             {
+                'documentation': {
+                    'description': 'Differential'
+                },
                 'name': 'DIFF',
                 'value': 10106
             },
             {
+                'documentation': {
+                    'description': 'Pseudodifferential'
+                },
                 'name': 'PSEUDO_DIFF',
                 'value': 12529
             }
@@ -2341,14 +2364,23 @@ enums = {
     'LengthUnits4': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Meters.'
+                },
                 'name': 'METERS',
                 'value': 10219
             },
             {
+                'documentation': {
+                    'description': 'Feet.'
+                },
                 'name': 'FEET',
                 'value': 10380
             },
             {
+                'documentation': {
+                    'description': 'Units a custom scale specifies. If you select this value, you must specify a custom scale name.'
+                },
                 'name': 'FROM_CUSTOM_SCALE',
                 'value': 10065
             }
@@ -2375,10 +2407,16 @@ enums = {
     'LineGrouping': {
         'values': [
             {
+                'documentation': {
+                    'description': 'One Channel For Each Line'
+                },
                 'name': 'CHAN_PER_LINE',
                 'value': 0
             },
             {
+                'documentation': {
+                    'description': 'One Channel For All Lines'
+                },
                 'name': 'CHAN_FOR_ALL_LINES',
                 'value': 1
             }
@@ -2461,7 +2499,7 @@ enums = {
                 'documentation': {
                     'description': 'Compatible with TTL and 5 V CMOS signals.'
                 },
-                'name': '5_V',
+                'name': '5V',
                 'value': 14619
             }
         ]
@@ -2552,54 +2590,6 @@ enums = {
                 },
                 'name': 'NONE',
                 'value': 10230
-            }
-        ]
-    },
-    'NavMeasurementType': {
-        'values': [
-            {
-                'name': 'ALTITUDE',
-                'value': 15997
-            },
-            {
-                'name': 'LONGITUDE',
-                'value': 15998
-            },
-            {
-                'name': 'LATITUDE',
-                'value': 15999
-            },
-            {
-                'name': 'SPEED_OVER_GROUND',
-                'value': 16000
-            },
-            {
-                'name': 'TRACK',
-                'value': 16001
-            },
-            {
-                'name': 'TIMESTAMP',
-                'value': 15986
-            },
-            {
-                'name': 'VERT_VELOCITY',
-                'value': 16003
-            }
-        ]
-    },
-    'NavMode': {
-        'values': [
-            {
-                'name': 'MOBILE',
-                'value': 15989
-            },
-            {
-                'name': 'STATIONARY_WITH_SURVEY',
-                'value': 15990
-            },
-            {
-                'name': 'STATIONARY_WITH_PRESET_LOCATION',
-                'value': 15991
             }
         ]
     },
@@ -2707,17 +2697,76 @@ enums = {
             }
         ]
     },
+    'PowerIdleOutputBehavior': {
+        'values': [
+            {
+                'documentation': {
+                    'description': 'Disable power output.'
+                },
+                'name': 'OUTPUT_DISABLED',
+                'value': 15503
+            },
+            {
+                'documentation': {
+                    'description': 'Continue generating the current power.'
+                },
+                'name': 'MAINTAIN_EXISTING_VALUE',
+                'value': 12528
+            }
+        ]
+    },
+    'PowerOutputState': {
+        'values': [
+            {
+                'documentation': {
+                    'description': ' Power output is maintaining a constant voltage by adjusting the current.'
+                },
+                'name': 'CONSTANT_VOLTAGE',
+                'value': 15500
+            },
+            {
+                'documentation': {
+                    'description': ' Power output is maintaining a constant current by adjusting the voltage.'
+                },
+                'name': 'CONSTANT_CURRENT',
+                'value': 15501
+            },
+            {
+                'documentation': {
+                    'description': 'Voltage output has exceeded its limit.'
+                },
+                'name': 'OVERVOLTAGE',
+                'value': 15502
+            },
+            {
+                'documentation': {
+                    'description': 'Power output is disabled.'
+                },
+                'name': 'OUTPUT_DISABLED',
+                'value': 15503
+            }
+        ]
+    },
     'PowerUpChannelType': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Voltage Channel'
+                },
                 'name': 'CHANNEL_VOLTAGE',
                 'value': 0
             },
             {
+                'documentation': {
+                    'description': 'Current Channel'
+                },
                 'name': 'CHANNEL_CURRENT',
                 'value': 1
             },
             {
+                'documentation': {
+                    'description': 'High-Impedance Channel'
+                },
                 'name': 'CHANNEL_HIGH_IMPEDANCE',
                 'value': 2
             }
@@ -2726,14 +2775,23 @@ enums = {
     'PowerUpStates': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Logic high.'
+                },
                 'name': 'HIGH',
                 'value': 10192
             },
             {
+                'documentation': {
+                    'description': 'Logic low.'
+                },
                 'name': 'LOW',
                 'value': 10214
             },
             {
+                'documentation': {
+                    'description': 'High-impedance state. You can select this state only on devices with bidirectional lines.  You cannot select this state for dedicated digital output lines. On some devices, you can select this value only for entire ports.'
+                },
                 'name': 'TRISTATE',
                 'value': 10310
             }
@@ -2926,6 +2984,20 @@ enums = {
                 },
                 'name': 'FIELD_DAQ',
                 'value': 16151
+            },
+            {
+                'documentation': {
+                    'description': 'TestScale chassis.'
+                },
+                'name': 'TEST_SCALE_CHASSIS',
+                'value': 16180
+            },
+            {
+                'documentation': {
+                    'description': 'TestScale I/O module.'
+                },
+                'name': 'TEST_SCALE_MODULE',
+                'value': 16181
             },
             {
                 'documentation': {
@@ -3154,10 +3226,16 @@ enums = {
     'ResistorState': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Pull up.'
+                },
                 'name': 'PULL_UP',
                 'value': 15950
             },
             {
+                'documentation': {
+                    'description': 'Pull down.'
+                },
                 'name': 'PULL_DOWN',
                 'value': 15951
             }
@@ -3284,14 +3362,23 @@ enums = {
     'SaveOptions': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Overwrite a global virtual channel of the same name if one is already saved in MAX.'
+                },
                 'name': 'OVERWRITE',
                 'value': 1
             },
             {
+                'documentation': {
+                    'description': 'Allow the global virtual channel to be edited in the DAQ Assistant.'
+                },
                 'name': 'ALLOW_INTERACTIVE_EDITING',
                 'value': 2
             },
             {
+                'documentation': {
+                    'description': 'Allow the global virtual channel to be deleted through MAX.'
+                },
                 'name': 'ALLOW_INTERACTIVE_DELETION',
                 'value': 4
             }
@@ -3877,30 +3964,51 @@ enums = {
     'TaskControlAction': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Start'
+                },
                 'name': 'TASK_START',
                 'value': 0
             },
             {
+                'documentation': {
+                    'description': 'Stop'
+                },
                 'name': 'TASK_STOP',
                 'value': 1
             },
             {
+                'documentation': {
+                    'description': 'Verify'
+                },
                 'name': 'TASK_VERIFY',
                 'value': 2
             },
             {
+                'documentation': {
+                    'description': 'Commit'
+                },
                 'name': 'TASK_COMMIT',
                 'value': 3
             },
             {
+                'documentation': {
+                    'description': 'Reserve'
+                },
                 'name': 'TASK_RESERVE',
                 'value': 4
             },
             {
+                'documentation': {
+                    'description': 'Unreserve'
+                },
                 'name': 'TASK_UNRESERVE',
                 'value': 5
             },
             {
+                'documentation': {
+                    'description': 'Abort'
+                },
                 'name': 'TASK_ABORT',
                 'value': 6
             }
@@ -3909,18 +4017,30 @@ enums = {
     'TemperatureUnits': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Degrees Celsius.'
+                },
                 'name': 'DEG_C',
                 'value': 10143
             },
             {
+                'documentation': {
+                    'description': 'Degrees Fahrenheit.'
+                },
                 'name': 'DEG_F',
                 'value': 10144
             },
             {
+                'documentation': {
+                    'description': 'Kelvins.'
+                },
                 'name': 'KELVINS',
                 'value': 10325
             },
             {
+                'documentation': {
+                    'description': 'Degrees Rankine.'
+                },
                 'name': 'DEG_R',
                 'value': 10145
             }
@@ -4082,10 +4202,16 @@ enums = {
     'Timescale': {
         'values': [
             {
+                'documentation': {
+                    'description': '.'
+                },
                 'name': 'TAI',
                 'value': 15988
             },
             {
+                'documentation': {
+                    'description': '.'
+                },
                 'name': 'UTC',
                 'value': 15987
             }
@@ -4112,18 +4238,30 @@ enums = {
     'TimestampEvent': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Start Trigger'
+                },
                 'name': 'START_TRIGGER',
                 'value': 12491
             },
             {
+                'documentation': {
+                    'description': 'Reference Trigger'
+                },
                 'name': 'REFERENCE_TRIGGER',
                 'value': 12490
             },
             {
+                'documentation': {
+                    'description': 'Arm Start Trigger'
+                },
                 'name': 'ARM_START_TRIGGER',
                 'value': 14641
             },
             {
+                'documentation': {
+                    'description': 'First Sample Timestamp'
+                },
                 'name': 'FIRST_SAMPLE_TIMESTAMP',
                 'value': 16130
             }
@@ -4384,26 +4522,44 @@ enums = {
     'TriggerUsage': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Advance trigger.'
+                },
                 'name': 'ADVANCE',
                 'value': 12488
             },
             {
+                'documentation': {
+                    'description': 'Pause trigger.'
+                },
                 'name': 'PAUSE',
                 'value': 12489
             },
             {
+                'documentation': {
+                    'description': 'Reference trigger.'
+                },
                 'name': 'REFERENCE',
                 'value': 12490
             },
             {
+                'documentation': {
+                    'description': 'Start trigger.'
+                },
                 'name': 'START',
                 'value': 12491
             },
             {
+                'documentation': {
+                    'description': 'Handshake trigger.'
+                },
                 'name': 'HANDSHAKE',
                 'value': 10389
             },
             {
+                'documentation': {
+                    'description': 'Arm Start trigger.'
+                },
                 'name': 'ARM_START',
                 'value': 14641
             }
@@ -4743,26 +4899,44 @@ enums = {
     'VelocityUnits2': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Meters per second.'
+                },
                 'name': 'METERS_PER_SECOND',
                 'value': 15959
             },
             {
+                'documentation': {
+                    'description': 'Kilometers per hour.'
+                },
                 'name': 'KILOMETERS_PER_HOUR',
                 'value': 16007
             },
             {
+                'documentation': {
+                    'description': 'Feet per second.'
+                },
                 'name': 'FEET_PER_SECOND',
                 'value': 16008
             },
             {
+                'documentation': {
+                    'description': 'Milers per hour.'
+                },
                 'name': 'MILES_PER_HOUR',
                 'value': 16009
             },
             {
+                'documentation': {
+                    'description': 'Knots.'
+                },
                 'name': 'KNOTS',
                 'value': 16010
             },
             {
+                'documentation': {
+                    'description': 'Units a custom scale specifies. If you select this value, you must specify a custom scale name.'
+                },
                 'name': 'FROM_CUSTOM_SCALE',
                 'value': 10065
             }
@@ -4932,14 +5106,23 @@ enums = {
     'WatchdogAOOutputType': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Voltage output.'
+                },
                 'name': 'VOLTAGE',
                 'value': 10322
             },
             {
+                'documentation': {
+                    'description': 'Current output.'
+                },
                 'name': 'CURRENT',
                 'value': 10134
             },
             {
+                'documentation': {
+                    'description': 'Expiration does not affect the port. Do not change the state of any lines in the port, and do not lock the port.'
+                },
                 'name': 'NO_CHANGE',
                 'value': 10160
             }
@@ -4973,10 +5156,16 @@ enums = {
     'WatchdogControlAction': {
         'values': [
             {
+                'documentation': {
+                    'description': 'Reset Timer'
+                },
                 'name': 'RESET_TIMER',
                 'value': 0
             },
             {
+                'documentation': {
+                    'description': 'Clear Expiration'
+                },
                 'name': 'CLEAR_EXPIRATION',
                 'value': 1
             }
@@ -5021,14 +5210,23 @@ enums = {
     'WriteBasicTEDSOptions': {
         'values': [
             {
+                'documentation': {
+                    'description': ' Write basic TEDS data to the EEPROM, even if the sensor includes a PROM. You  cannot write basic TEDS data if the PROM contains data.'
+                },
                 'name': 'WRITE_TO_EEPROM',
                 'value': 12538
             },
             {
+                'documentation': {
+                    'description': ' Write basic TEDS data to the PROM. Any subsequent attempts to write basic TEDS  data result in an error.'
+                },
                 'name': 'WRITE_TO_PROM',
                 'value': 12539
             },
             {
+                'documentation': {
+                    'description': 'Ignore basic TEDS data.'
+                },
                 'name': 'DO_NOT_WRITE',
                 'value': 12540
             }

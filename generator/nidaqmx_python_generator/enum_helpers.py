@@ -13,11 +13,7 @@ ENUMS_BLACKLIST = [
     "AOOutputChannelType",
     "CIMeasurementType",
     "COOutputType",
-    "AltRef",
-    "AntStatus",
     "CalibrationTerminalConfig",
-    "NavMeasurementType",
-    "NavMode",
     "SaveOptions"
 ]
 
@@ -25,69 +21,43 @@ ENUMS_BLACKLIST = [
 # Metadata issues or invalid Python names (leading number)
 NAME_SUBSTITUTIONS = {
     '100_MHZ_TIMEBASE': 'ONE_HUNDRED_MHZ_TIMEBASE',
-    '10134': 'CURRENT',
-    '10322': 'VOLTAGE',
-    '12527': 'HIGH_IMPEDANCE',
     '20_MHZ_TIMEBASE': 'TWENTY_MHZ_TIMEBASE',
     '2POINT_5_V': 'TWO_POINT_FIVE_V',
     '2_WIRE': 'TWO_WIRE',
     '3POINT_3_V': 'THREE_POINT_THREE_V',
     '3_WIRE': 'THREE_WIRE',
     '4_WIRE': 'FOUR_WIRE',
-    '5_V': 'FIVE_V',
+    '5V': 'FIVE_V',
     '5_WIRE': 'FIVE_WIRE',
     '6_WIRE': 'SIX_WIRE',
     '80_MHZ_TIMEBASE': 'EIGHTY_MHZ_TIMEBASE',
     '8_MHZ_TIMEBASE': 'EIGHT_MHZ_TIMEBASE',
-    'ACCEL_UNIT_G': 'G',
+    'ACCEL_UNIT_G': 'G',  # This has shipped in NIDAQmx.h, we can't change it.
     'LOGIC_LEVEL_PULL_UP': 'PULL_UP',
-    'MILLI_VOLTS': 'MILLIVOLTS',
+    'MILLI_VOLTS': 'MILLIVOLTS', # The C API uses mVolts, Millivolts, and MilliVolts in various places, fun!
     'M_VOLTS': 'MILLIVOLTS',
     'ON_BRD': 'ONBRD',
-    'PC_IE': 'PCIE',
-    'PX_IE': 'PXIE',
+    'US_BBULK': 'USB_BULK'
 }
 
 ENUM_MERGE_SET = {
     "CurrentShuntResistorLocation": ["CurrentShuntResistorLocation1", "CurrentShuntResistorLocationWithDefault"],
     "InputTermCfg": ["InputTermCfg2", "InputTermCfgWithDefault"],
+    "FilterResponse": ["FilterResponse", "FilterResponse1"],
+    "ScaleType": ["ScaleType", "ScaleType2", "ScaleType3", "ScaleType4"],
 }
 
-# TODO: Where are these? (if unused, that's fine)
-# Action (Commit, Cancel)
-# ActiveOrInactiveEdgeSelection
-# BreakMode
-# BridgeConfiguration (QUARTER_BRIDGE_120_OHM_COMPLETION_RESISTOR, QUARTER_BRIDGE_350_OHM_COMPLETION_RESISTOR)
-# CalibrationTerminalConfig
-# EndCalAction
-# FillMode (now GroupBy???)
-# ExportAction (ExportActions was added... odd)
-# FilterResponse (CONSTANT_GROUP_DELAY, ELLIPTICAL, HARDWARE_DEFINED)
-# Level (NO_CHANGE, TRISTATE)
-# PathCapability
-# RelayPosition
-# ScaleType (Linear, Map Ranges)
-# ScanRepeatMode
-# ShuntElementLocation
-# ShuntResistorSelect
-# Signal (lots of values)
-# SignalModifiers
-# TaskMode (now TaskControlAction)
-# TaskState
-# UsageTypeAI, AO, CI, CO
-# WDTTaskAction
-# WatchdogTaskAction (WatchdogControlAction)
-# bitfield types
-
-# 22.5 stuff:
-# TestScale/Power
+# TODO: bitfield types
 
 def _merge_enum_values(valueses):
     result_set = {}
     for values_array in valueses:
         for value in values_array:
             value_num = value['value']
-            result_set[value_num] = value
+            # If it exists already, only overwrite if the current one has no documentation.
+            if value_num not in result_set or 'documentation' not in result_set[value_num]:
+                result_set[value_num] = value
+
     return list(result_set.values())
 
 
